@@ -17,12 +17,17 @@ function Login() {
   function handelSubmit(e) {
     e.preventDefault();
     console.log(data);
-    axios.post("http://localhost:3000/api/v1/user/login", data).then((res) => {
-      if (res.status == 200) {
-        localStorage.setItem("auth-token", res.data.token);
-        navigate("/");
-      }
-    });
+    axios
+      .post(
+        "https://assignment-backend-sooty.vercel.app/api/v1/user/login",
+        data
+      )
+      .then((res) => {
+        if (res.status == 200) {
+          localStorage.setItem("auth-token", res.data.token);
+          navigate("/");
+        }
+      });
   }
 
   return (

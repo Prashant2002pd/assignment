@@ -15,7 +15,7 @@ function Home() {
     }
 
     axios
-      .get("http://localhost:3000/api/v1/getuser", {
+      .get("https://assignment-backend-sooty.vercel.app//api/v1/getuser", {
         headers: {
           Authorization: token,
         },
@@ -24,7 +24,7 @@ function Home() {
         setUser(data.data.user);
       });
     axios
-      .get("http://localhost:3000/api/v1/getcar", {
+      .get("https://assignment-backend-sooty.vercel.app//api/v1/getcar", {
         headers: {
           Authorization: token,
         },
@@ -39,11 +39,14 @@ function Home() {
 
   function handleDelete(id) {
     axios
-      .delete(`http://localhost:3000/api/v1/deletecar/${id}`, {
-        headers: {
-          Authorization: token,
-        },
-      })
+      .delete(
+        `https://assignment-backend-sooty.vercel.app//api/v1/deletecar/${id}`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      )
       .then((res) => {
         if (res.status == 200) {
         }
